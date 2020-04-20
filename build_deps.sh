@@ -2,8 +2,8 @@
 
 DEPS_LOCATION=_build/deps
 
-if [ -d "$DEPS_LOCATION" ]; then
-    echo "cpp-driver fork already exist. delete $DEPS_LOCATION for a fresh checkout."
+if [ -d "$DEPS_LOCATION/cpp-driver" ]; then
+    echo "cpp-driver fork already exist. delete $DEPS_LOCATION/cpp-driver for a fresh checkout."
     exit 0
 fi
 
@@ -62,7 +62,7 @@ case $OS in
             *) echo "Your system $KERNEL is not supported"
         esac
         export CFLAGS="-fPIC -Wno-class-memaccess"
-		export CXXFLAGS="-fPIC -Wno-class-memaccess"
+        export CXXFLAGS="-fPIC -Wno-class-memaccess"
     ;;
 
     Darwin)
